@@ -16,7 +16,6 @@ public class Pair<T, U> {
          return new Pair<T, U>(first, second);
      }
 
-    // Метод ifPresent, принимает BiConsumer и выполняет его, если элементы не равны null
     public void ifPresent(BiConsumer<? super T, ? super U> consumer) {
         if (first != null && second != null) {
             consumer.accept(first, second);
@@ -38,13 +37,11 @@ public class Pair<T, U> {
         return Objects.equals(first, pair.first) && Objects.equals(second, pair.second);
     }
 
-    // Переопределение hashCode
     @Override
     public int hashCode() {
         return Objects.hash(first, second);
     }
 
-    // Переопределение toString для удобного отображения объекта
     @Override
     public String toString() {
         return "Pair{" +
